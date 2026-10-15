@@ -2,16 +2,16 @@
 
 ## Current release boundary
 
-This repository contains the independent FDA Tracker homepage and local manager demonstration. The production build passes, but a hosted, usable dashboard is not implemented yet. Production deliberately disables direct Admin/User demo login.
+This repository contains the independent FDA Tracker homepage and local manager demonstration. Production includes a separate public manager preview at `/preview?role=user` and `/preview?role=admin`. The homepage role choices open this preview on Vercel. It uses a bundled snapshot of 105 public-source records (89 approved demonstration examples and 16 pending examples), not the server SQLite database. Charts use the snapshot date, 2026-10-15. Search, categories, date filtering, pagination and record details work; sample editorial changes persist only in sessionStorage in the same browser tab. Source collection is disabled. Every snapshot record is public, including pending samples; the preview is not an access-control boundary. Production server authentication and writes remain disabled.
 
-The local SQLite database, collection history, editorial decisions and session signing key are excluded from Git. The 89 locally published demonstration records will not appear after cloning or deploying. Six public reference examples are included in source; they start pending when a local database is initialized.
+The local SQLite database, collection history, editorial decisions and session signing key are excluded from Git. The local database is not uploaded. Six public reference examples are included for local initialization. A separate, sanitized public-source snapshot powers the hosted preview; no decision history or signing key is included.
 
 ## Import into Vercel
 
 1. In your Vercel account, choose Add New → Project and import `webseotools007/fdatracker` from GitHub.
 2. Use the repository root as Root Directory and the detected Next.js framework.
 3. Select Node.js 24.x. Keep the build command `npm run build` and the default Next.js output settings. Use `npm ci` for installation.
-4. Deploy the homepage preview and review the build logs. No environment variables are needed for the homepage. Do not enable public demo Admin access.
+4. Deploy the homepage preview and review the build logs. No environment variables are needed for the homepage or public manager preview. Do not enable public demo Admin access.
 
 A successful local build does not verify a Vercel deployment. The site has not been deployed merely by pushing to GitHub.
 

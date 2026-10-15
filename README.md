@@ -79,3 +79,8 @@ Unit/integration tests cover approval visibility, stale decisions, changed evide
 ## Remaining work
 
 Real account signup/login and a hosted deployment are the next practical steps. More comprehensive Warning Letter/Form 483 pagination and drug-approval retrieval can follow if needed. Investigator scoring, AI agents, global regulators and the earlier 54-screen architecture are outside this app's requested scope.
+
+## Hosted manager preview
+
+Production homepage role choices open a separate public manager preview. It includes 105 public-source snapshot records, charts, filters and tab-only sample editorial decisions. Live collection is disabled. No Vercel environment variables are required for this preview. Server demo login remains disabled in production. See DEPLOYMENT.md for the distinction between this demonstration and real hosted accounts/storage.
+
